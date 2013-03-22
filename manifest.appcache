@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# Thu Mar 21 2013 23:41:41
+
+CACHE:
+favicon.ico
+index.html
+css/waitnext.min.css
+js/waitnext.min.js
+images/icon-57x57.png
+
+NETWORK:
+*
