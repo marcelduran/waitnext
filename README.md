@@ -28,6 +28,11 @@ By adding to home screen, you are able to use it even with no internet connectio
 
 [DMV](http://dmv.ca.gov). Needless to say!
 
+## Powered by
+
+* [Twitter Flight](http://twitter.github.com/flight)
+* [Ratchet](http://maker.github.com/ratchet)
+
 ## Playing with the code?
 
 * [Fork it](http://github.com/marcelduran/waitnext)
