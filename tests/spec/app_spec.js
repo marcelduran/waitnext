@@ -27,6 +27,7 @@ define(
       StorageData.teardownAll();
       TimesData.teardownAll();
       HeaderUI.teardownAll();
+      HelpUI.teardownAll();
       WaitingUI.teardownAll();
       SetupUI.teardownAll();
     });
