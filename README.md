@@ -1,4 +1,4 @@
-# Wait Next [![Build Status](https://secure.travis-ci.org/marcelduran/waitnext.png?branch=master)](http://travis-ci.org/marcelduran/waitnext)
+# Wait Next [![Build Status](https://secure.travis-ci.org/marcelduran/waitnext.png?branch=master)](http://travis-ci.org/marcelduran/waitnext) [![Dependencies Status](https://david-dm.org/marcelduran/waitnext.png)](https://david-dm.org/marcelduran/waitnext)
 
 [Wait Next](http://waitnext.com) is a Web App that estimates your waiting time in line in places where each individual pick a number in order to get in line.
 
@@ -18,7 +18,7 @@ By adding to home screen, you are able to use it even with no internet connectio
 ## How does it work?
 
 * You start by entering the number you picked when you first arrived at the line
-* Enter the current number in progress, usually displayed in a digital board
+* Enter the current number in progress, usually displayed in a digital dashboard
 * After pressing **Start** button, *Wait Next* start counting the time elapsed
 * Every time the next number is called you click **Next** button
 * *Wait Next* then calculates the average between each number called and estimate your waiting time
@@ -40,6 +40,10 @@ By adding to home screen, you are able to use it even with no internet connectio
 * [grunt](http://gruntjs.com/) dev
 * Go to http://localhost:8000
 * Have fun!
+
+## What's next?
+
+Turn this Web App into a *social waiting* app where users inform the venue where they are in line, so othes may check the average time waiting before heading to that line or users can leave the line for a short period of time while still watching in real time the current number on the dashboard.
 
 ## Issues
 
