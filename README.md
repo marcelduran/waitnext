@@ -37,7 +37,6 @@ By adding to home screen, you are able to use it even with no internet connectio
 
 * [Fork it](http://github.com/marcelduran/waitnext)
 * [npm](https://npmjs.org/) install
-* [bower](http://twitter.github.com/bower/) install
 * [grunt](http://gruntjs.com/) dev
 * Go to http://localhost:8000
 * Have fun!
