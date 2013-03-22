@@ -1,0 +1,108 @@
+/* Copyright (c) 2013, Marcel Duran - Released under the MIT License */
+
+a, p, label, .bar-title, .bar-tab {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.bar-tab {
+  background: #fff;
+  height: 68px;
+  border: none;
+  text-align: center;
+}
+
+#ads {
+  border-top: 1px solid #000;
+  margin-top: 5px;
+  height: 50px;
+}
+
+#estimate {
+  text-align: center;
+  font-weight: bold;
+  font-size: 400%;
+  margin-bottom: 10px;
+}
+
+.state-setup .bar-title .button {
+  visibility: hidden;
+}
+
+.popover.show {
+  display: block;
+  opacity: 1;
+}
+
+.list li {
+  padding: 9px;
+}
+
+.custom-list li {
+  padding: 0;
+  border: none;
+}
+
+.custom-list li:first-child {
+  border: none;
+}
+
+.custom-list [class*="button"] {
+  margin-top: 0;
+  position: static;
+  padding: 0 6px;
+  font-weight: normal;
+  vertical-align: bottom;
+  line-height: 18px;
+}
+
+.custom-list .button-positive,
+.custom-list .button-main,
+footer a,
+footer span {
+  margin: 0 4px;
+}
+
+.icon {
+  display: inline-block;
+  width: 57px;
+  height: 57px;
+  background: url(/images/icon-57x57.png);
+  vertical-align: middle;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.stats {
+  height: 75px;
+}
+.disp {
+  text-align: center;
+}
+.disp.current {
+  float: left;
+}
+.disp.your {
+  float: right;
+}
+.number {
+  font-size: 300%;
+  font-weight: bold;
+}
+
+.button-block {
+  padding: 22px 0 26px;
+  font-size: 32px;
+  width: 100%;
+}
+.button-block:active {
+  padding: 24px 0;
+}
+
+input[type="number"] {
+  height: 60px;
+  font-size: 200%;
+}

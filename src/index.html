@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" @@appcache>
+  <head>
+    <meta charset="utf-8">
+    <title>@@title</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Meta info -->
+    <meta name="description" content="@@description">
+    <meta name="keywords" content="estimate,time,line,wait,await,how long,dmv">
+    <meta name="author" content="Marcel Duran">
+
+    <!-- Meta social -->
+    <meta property="og:title" content="@@title">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="@@icon">
+    <meta property="og:url" content="@@url">
+    <meta property="og:site_name" content="@@title">
+    <meta property="og:description" content="@@description">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@marcelduran">
+    <meta name="twitter:url" content="@@url">
+    <meta name="twitter:description" content="@@description">
+    <meta name="twitter:title" content="@@title">
+    <meta name="twitter:image" content="@@icon">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Set Apple icons for when prototype is saved to home screen -->
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/icon-57x57.png">
+
+    <!-- Set Apple startup splash screen for when prototype is saved to home screen -->
+    <link rel="apple-touch-startup-image" media="(device-height: 568px)" href="images/startup-640x1096.png">
+    <link rel="apple-touch-startup-image" sizes="640x920" media="(device-height: 480px)" href="images/startup-640x920.png">
+
+    @@css
+
+  </head>
+  <body class="state-setup">
+
+  <!-- Help popover -->
+  <div class="popover">
+    <header class="popover-header">
+      <h3 class="title">Help</h3>
+      <a class="button help">Done</a>
+    </header>
+    <div>
+      <ul class="list">
+        <li>
+          <ul class="custom-list">
+            <li>Enter your number in line</li>
+            <li>Enter the current displaying number</li>
+            <li>Press <a class="button-positive">Start</a></li>
+          </ul>
+        </li>
+        <li>
+          <ul class="custom-list">
+            <li>Press <a class="button-positive">Next</a> when current # changes</li>
+            <li>Get your estimated time waiting</li>
+            <li>Press <a class="button-main">Undo</a> to discard last number</li> 
+            <li>To start over, press <a class="button-main">Restart</a></li> 
+          </ul>
+        </li>
+        <li><span class="icon"></span><strong>Add to Home Screen</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Make sure all your bars are the first things in your <body> -->
+  <header class="bar-title">
+    <a id="restart" class="button button-prev">Restart</a>
+    <h1 class="title"><a href="#help" class="help">Wait Next</a></h1>
+    <a id="undo" class="button">Undo</a>
+  </header>
+
+  <nav class="bar-tab">
+    <footer>
+    <p><span>Copyright 2013</span>·<a href="http://twitter.com/marcelduran" target="_blank">Marcel Duran</a>·<a class="help" href="#help">Help</a></p>
+    </footer>
+
+    <div id="ads">@@ads</div>
+  </nav>
+
+  <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+  <div class="content">
+    <div class="content-padded">
+
+      <div id="setup">
+        <form id="start">
+          <input type="number" id="number" placeholder="Your Number">
+          <input type="number" id="current" placeholder="Current Number">
+          <input type="submit" class="button-positive button-block" value="Start">
+        </form>
+      </div>
+
+      <div id="waiting" style="display:none">
+        <div class="stats">
+          <div class="disp current">
+            <label>Current Number</label>
+            <p class="number"></p>
+          </div>
+          <div class="disp your">
+            <label>Your Number</label>
+            <p class="number"></p>
+          </div>
+        </div>
+        <div class="disp">
+          <label>Estimated Waiting Time</label>
+          <p id="estimate"></p>
+        </div>
+        <a id="next" class="button-positive button-block">Next</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  @@js
+
+  </body>
+</html>
+<!-- Copyright (c) 2013, Marcel Duran - Released under the MIT License -->

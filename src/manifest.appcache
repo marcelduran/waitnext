@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# @@timestamp
+
+CACHE:
+favicon.ico
+index.html
+@@cache_css
+@@cache_js
+images/icon-57x57.png
+
+NETWORK:
+*
