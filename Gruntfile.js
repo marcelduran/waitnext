@@ -118,8 +118,11 @@ module.exports = function(grunt) {
 
     uglify: {
       dist: {
-        src: 'components/requirejs/require.js',
-        dest: 'tmp/require.min.js'
+        src: ['components/requirejs/require.js', 'src/inline/js/*.js'],
+        dest: 'tmp/',
+        expand: true,
+        flatten: true,
+        ext: '.min.js'
       }
     },
 
@@ -207,6 +210,7 @@ module.exports = function(grunt) {
             js: '<script src="components/jquery/jquery.js"></script>\n' +
                 '<script data-main="src/app/boot/main" src="components/requirejs/require.js"></script>',
             ads: 'ads go here',
+            ga: '',
             appcache: ''
           }
         },
@@ -226,8 +230,9 @@ module.exports = function(grunt) {
             url: 'http://waitnext.com',
             css: '<link rel="stylesheet" href="css/<%= pkg.name %>.min.css">',
             js: '<script src="js/<%= pkg.name %>.min.js"></script>',
-            ads: '<script>google_ad_client="ca-pub-4420779685366214";google_ad_slot="8446511887";google_ad_width=320;google_ad_height=50</script>' +
+            ads: '<script><%= grunt.file.read("tmp/adsense.min.js") %></script>' +
                  '<script src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>',
+            ga: '<script><%= grunt.file.read("tmp/ga.min.js") %></script>',
             appcache: 'manifest="manifest.appcache"',
             timestamp: '<%= grunt.template.today() %>',
             cache_css: 'css/<%= pkg.name %>.min.css',
