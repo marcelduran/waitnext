@@ -6,12 +6,16 @@ define(['components/flight/lib/component'], function(defineComponent) {
 
   function title() {
 
+    this.setTitle = screen.width <= 640 ? $.noop : function(text) {
+      this.$node.text(text);
+    };
+
     this.restart = function() {
-      this.$node.text('Wait Next');
+      this.setTitle('Wait Next');
     };
 
     this.update = function(ev, data) {
-      this.$node.text(data.estimate);
+      this.setTitle(data.estimate);
     };
 
     this.after('initialize', function() {
