@@ -56,10 +56,14 @@ define(['components/flight/lib/component'], function(defineComponent) {
       clearInterval(timer);
       this.countdown.call(this);
       timer = setInterval(this.countdown.bind(this), 1000);
+      this.refresher();
     };
 
     this.refresher = function() {
-      this.estimate(Date.now() - lastTime);
+      clearInterval(refresher);
+      refresher = setInterval(function() {
+        this.estimate(Date.now() - lastTime);
+      }.bind(this), 10000);
     };
 
     this.start = function(ev, data) {
@@ -67,7 +71,7 @@ define(['components/flight/lib/component'], function(defineComponent) {
       current = data.current;
       startTime = lastTime = data.lastTime || Date.now();
       times = data.times || [];
-      refresher = setInterval(this.refresher.bind(this), 10000);
+      this.refresher();
     };
 
     this.restart = function() {
