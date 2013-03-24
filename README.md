@@ -26,7 +26,7 @@ By adding to home screen, you are able to use it even with no internet connectio
 
 ## Motivation
 
-[DMV](http://dmv.ca.gov). Needless to say!
+[DMV](http://dmv.ca.gov) without an appointment. Needless to say!
 
 ## Powered by
 
@@ -43,7 +43,11 @@ By adding to home screen, you are able to use it even with no internet connectio
 
 ## What's next?
 
-Turn this Web App into a *social waiting* app where users inform the venue where they are in line, so othes may check the average time waiting before heading to that line or users can leave the line for a short period of time while still watching in real time the current number on the dashboard.
+Turn this Web App into a *social waiting* app where users inform the venue where they are in line, so others may check the average time waiting before heading to that line or users can leave the line for a short period of time while still watching in real time the current number on the dashboard.
+
+## What's up with the bottom ads?
+
+It looks and feels like a real *"free"* App downloaded from some store :-)
 
 ## Issues
 
