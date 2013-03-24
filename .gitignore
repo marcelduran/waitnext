@@ -1,6 +1,7 @@
 *.swp
 .DS_Store
 build
-dist
-node_modules
 components
+dist
+gh-pages
+node_modules

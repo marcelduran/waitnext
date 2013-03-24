@@ -250,6 +250,13 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+
+    githubPages: {
+      dist: {
+        src: 'dist/<%= pkg.version %>/',
+        dest: 'gh-pages'
+      }
     }
 
   });
@@ -267,6 +274,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-contrib-livereload');
   grunt.loadNpmTasks('grunt-regarde');
+  grunt.loadNpmTasks('grunt-github-pages');
 
   grunt.registerTask('test', ['jshint', 'connect:jasmine', 'jasmine']);
   grunt.registerTask('dist', [
@@ -291,5 +299,6 @@ module.exports = function(grunt) {
     'regarde'
   ]);
   grunt.registerTask('default', ['test', 'build']);
+  grunt.registerTask('push', ['dist', 'githubPages']);
 
 };
