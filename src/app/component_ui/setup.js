@@ -34,7 +34,7 @@ define(['components/flight/lib/component'], function(defineComponent) {
 
       if (current >= number) {
         return this.trigger(document, 'message', {
-          text: 'Current number cannot be larger or equal than your number'
+          text: 'Current number cannot be equal or larger than your number'
         });
       }
 
