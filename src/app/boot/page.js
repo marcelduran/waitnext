@@ -9,6 +9,7 @@ define(
     'src/app/component_ui/title',
     'src/app/component_ui/header',
     'src/app/component_ui/help',
+    'src/app/component_ui/message',
     'src/app/component_ui/waiting',
     'src/app/component_ui/setup'
   ], function(
@@ -17,6 +18,7 @@ define(
     TitleUI,
     HeaderUI,
     HelpUI,
+    MessageUI,
     WaitingUI,
     SetupUI
   ) {
@@ -26,7 +28,8 @@ define(
       TimesData.attachTo(document);
       TitleUI.attachTo('title');
       HeaderUI.attachTo('.bar-title');
-      HelpUI.attachTo('.popover');
+      HelpUI.attachTo('#help');
+      MessageUI.attachTo('#message');
       WaitingUI.attachTo('#waiting');
       SetupUI.attachTo('#setup');
     }

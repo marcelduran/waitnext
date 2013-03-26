@@ -6,9 +6,18 @@ define(
     'src/app/component_data/times',
     'src/app/component_ui/header',
     'src/app/component_ui/help',
+    'src/app/component_ui/message',
     'src/app/component_ui/waiting',
     'src/app/component_ui/setup'
-  ], function(StorageData, TimesData, HeaderUI, HelpUI, WaitingUI, SetupUI) {
+  ], function(
+    StorageData,
+    TimesData,
+    HeaderUI,
+    HelpUI,
+    MessageUI,
+    WaitingUI,
+    SetupUI
+  ) {
 
   describe('App', function() {
 
@@ -18,7 +27,8 @@ define(
       StorageData.attachTo(document);
       TimesData.attachTo(document);
       HeaderUI.attachTo('.bar-title');
-      HelpUI.attachTo('.popover');
+      HelpUI.attachTo('#help');
+      MessageUI.attachTo('#message');
       WaitingUI.attachTo('#waiting');
       SetupUI.attachTo('#setup');
     });
@@ -28,13 +38,15 @@ define(
       TimesData.teardownAll();
       HeaderUI.teardownAll();
       HelpUI.teardownAll();
+      MessageUI.teardownAll();
       WaitingUI.teardownAll();
       SetupUI.teardownAll();
     });
 
     it('start with empty fields', function() {
 
-        var spyEvent = spyOnEvent(document, 'started');
+        var startedEvent = spyOnEvent(document, 'started'),
+            messageEvent = spyOnEvent(document, 'message');
 
         expect($('#setup')).toBeVisible();
         expect($('#waiting')).toBeHidden();
@@ -43,15 +55,21 @@ define(
         $('#current').val('');
         $('#start').submit();
 
-        expect(spyEvent).not.toHaveBeenTriggered();
+        expect(startedEvent).not.toHaveBeenTriggered();
+        expect(messageEvent).toHaveBeenTriggered();
         expect($('#setup')).toBeVisible();
         expect($('#waiting')).toBeHidden();
+
+        expect($('#message')).toBeVisible();
+        $('#message .close').click();
+        expect($('#message')).toBeHidden();
 
     });
 
     it('start with only one field', function() {
 
-        var spyEvent = spyOnEvent(document, 'started');
+        var startedEvent = spyOnEvent(document, 'started'),
+            messageEvent = spyOnEvent(document, 'message');
 
         expect($('#setup')).toBeVisible();
         expect($('#waiting')).toBeHidden();
@@ -60,22 +78,30 @@ define(
         $('#current').val('');
         $('#start').submit();
 
-        expect(spyEvent).not.toHaveBeenTriggered();
+        expect(startedEvent).not.toHaveBeenTriggered();
+        expect(messageEvent).toHaveBeenTriggered();
         expect($('#setup')).toBeVisible();
         expect($('#waiting')).toBeHidden();
 
         $('#number').val('');
         $('#current').val('100');
         $('#start').submit();
-        expect(spyEvent).not.toHaveBeenTriggered();
+        expect(startedEvent).not.toHaveBeenTriggered();
+        expect(messageEvent).toHaveBeenTriggered();
         expect($('#setup')).toBeVisible();
         expect($('#waiting')).toBeHidden();
+
+        expect($('#message')).toBeVisible();
+        $('#message .close').click();
+        expect($('#message')).toBeHidden();
 
     });
 
     it('start with invalid range', function() {
 
-        var spyEvent = spyOnEvent(document, 'started');
+        var startedEvent = spyOnEvent(document, 'started'),
+            messageEvent = spyOnEvent(document, 'message');
+
 
         expect($('#setup')).toBeVisible();
         expect($('#waiting')).toBeHidden();
@@ -84,9 +110,14 @@ define(
         $('#current').val('200');
         $('#start').submit();
 
-        expect(spyEvent).not.toHaveBeenTriggered();
+        expect(startedEvent).not.toHaveBeenTriggered();
+        expect(messageEvent).toHaveBeenTriggered();
         expect($('#setup')).toBeVisible();
         expect($('#waiting')).toBeHidden();
+
+        expect($('#message')).toBeVisible();
+        $('#message .close').click();
+        expect($('#message')).toBeHidden();
 
     });
 

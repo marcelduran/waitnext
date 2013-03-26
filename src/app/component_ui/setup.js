@@ -26,8 +26,16 @@ define(['components/flight/lib/component'], function(defineComponent) {
       number = parseInt(this.select('numberSelector').val(), 10);
       current = parseInt(this.select('currentSelector').val(), 10);
 
-      if (isNaN(number) || isNaN(current) || current >= number) {
-        return;
+      if (isNaN(number) || isNaN(current)) {
+        return this.trigger(document, 'message', {
+          text: 'Invalid number, use numbers only.'
+        });
+      }
+
+      if (current >= number) {
+        return this.trigger(document, 'message', {
+          text: 'Current number cannot be larger or equal than your number'
+        });
       }
 
       this.toggle();

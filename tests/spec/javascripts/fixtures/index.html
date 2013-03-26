@@ -1,5 +1,5 @@
   <!-- Help popover -->
-  <div class="popover">
+  <div id="help" class="popover">
     <header class="popover-header">
       <h3 class="title">Help</h3>
       <a class="button help">Done</a>
@@ -26,16 +26,29 @@
     </div>
   </div>
 
+  <!-- Message popover -->
+  <div id="message" class="popover">
+    <header class="popover-header">
+      <h3 class="title">Message</h3>
+      <a class="button close">Close</a>
+    </header>
+    <div>
+      <ul class="list">
+        <li class="text"></li>
+      </ul>
+    </div>
+  </div>
+
   <!-- Make sure all your bars are the first things in your <body> -->
   <header class="bar-title">
     <a id="restart" class="button button-prev">Restart</a>
-    <h1 class="title"><a href="#" class="help">Wait Next</a></h1>
+    <h1 class="title"><a href="#help" class="help">Wait Next</a></h1>
     <a id="undo" class="button">Undo</a>
   </header>
 
   <nav class="bar-tab">
     <footer>
-      <p>Copyright 2013 · <a href="http://twitter.com/marcelduran" target="_blank">Marcel Duran</a> · <a class="help" href="#help">Help</a></p>
+    <p><span>&copy; 2013</span>·<a href="http://twitter.com/marcelduran" target="_blank">Marcel Duran</a>·<a href="http://github.com/marcelduran/waitnext" target="_blank">Source</a>·<a class="help" href="#help">Help</a></p>
     </footer>
 
     <div id="ads">@@ads</div>

@@ -24,6 +24,8 @@ module.exports = function(grunt) {
             'src/app/component_data/times',
             'src/app/component_ui/setup',
             'src/app/component_ui/header',
+            'src/app/component_ui/help',
+            'src/app/component_ui/message',
             'src/app/component_ui/title',
             'src/app/component_ui/waiting'
           ],
